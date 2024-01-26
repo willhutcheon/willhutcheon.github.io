@@ -34,7 +34,7 @@ a {
 hr {
     border: 0;
     border-top: 3px solid #808080;
-    margin: 10px 0;
+    margin: 10px;
 }
 ul li {
     background: url('pie_icon.gif') no-repeat left center;
