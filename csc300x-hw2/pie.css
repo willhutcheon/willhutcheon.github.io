@@ -1,7 +1,7 @@
 /* Will Hutcheon */
 /* Webpage that displays information for how to make a pie with graphics included. This file contains the css code for the webpage. */
 body {
-    background-image: url('silverware.jpg');
+    background-image: url('images/silverware.jpg');
     background-color: white;
     color: #404040;
     font-size: 11pt;
@@ -37,7 +37,7 @@ hr {
     margin: 10px;
 }
 ul li {
-    background: url('pie_icon.gif') no-repeat left center;
+    background: url('images/pie_icon.gif') no-repeat left center;
     padding-left: 20px;
 }
 ul {
