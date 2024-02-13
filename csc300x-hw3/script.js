@@ -1,4 +1,4 @@
-const gallery = document.querySelectorAll('img');
+/* const gallery = document.querySelectorAll('img');
 
 gallery.forEach(image => {
     image.addEventListener('click', expand);
@@ -9,6 +9,25 @@ function expand(event) {
     gallery.forEach(image => {
         image.classList.remove('big');
         image.classList.add('small');
+    });
+    clickedImage.classList.remove('small');
+    clickedImage.classList.add('big');
+}
+ */
+
+const gallery = document.querySelectorAll('img');
+
+gallery.forEach(image => {
+    image.addEventListener('click', expand);
+});
+
+function expand(event) {
+    const clickedImage = event.currentTarget;
+    gallery.forEach(image => {
+        if (image !== clickedImage) {
+            image.classList.remove('big');
+            image.classList.add('small');
+        }
     });
     clickedImage.classList.remove('small');
     clickedImage.classList.add('big');

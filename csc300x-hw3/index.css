@@ -17,7 +17,7 @@ img {
     height: auto;
 }
 
-.flex-container {
+/* .flex-container {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
@@ -32,5 +32,23 @@ img {
     justify-content: space-evenly;
     align-items: center;
     height: 30px;
+    background-color: gray;
+}
+ */
+
+ .flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+    background-color: gray;
+}
+
+.flex-item {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px;
     background-color: gray;
 }
