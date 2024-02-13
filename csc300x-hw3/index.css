@@ -17,7 +17,7 @@ img {
     height: auto;
 }
 
- .flex-container {
+.flex-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
@@ -38,9 +38,6 @@ body {
     background-color: rgba(128, 128, 128, 0.589);
 }
 
-
-
-
-.displayed-dish-description {
-    display: block;
+.dish-description {
+    display: none;
 }

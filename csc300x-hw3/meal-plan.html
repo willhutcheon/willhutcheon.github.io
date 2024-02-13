@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>meal-plan</title>
+    <link rel="stylesheet" href="meal-plan.css">
+    <script src="meal-script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="recommendations">
+            <h2>Recommendations</h2>
+            <div class="restaurant">
+                <h3>Chick-fil-a</h3>
+                <div class="dish">
+                    <p>Chicken Sandwich Combo</p>
+                    <p>Description: This is a delicious sandwich made with tender chicken fillet and served with pickles on a toasted bun.</p>
+                    <p>Price: $5.99</p>
+                    <button class="add" data-name="Chicken Sandwich Combo" data-price="5.99">Add to Meal Plan</button>
+                </div>
+                <div class="dish">
+                    <p>Chicken Nuggets Combo</p>
+                    <p>Description: Crunchy chicken nuggets served with your choice of dipping sauce.</p>
+                    <p>Price: $4.99</p>
+                    <button class="add" data-name="Chicken Nuggets Combo" data-price="4.99">Add to Meal Plan</button>
+                </div>
+                <div class="dish">
+                    <p>Peppermint Milkshake</p>
+                    <p>Description: Peppermint Milkshake.</p>
+                    <p>Price: $7.99</p>
+                    <button class="add" data-name="Peppermint Milkshake" data-price="7.99">Add to Meal Plan</button>
+                </div>
+            </div>
+            <div class="restaurant">
+                <h3>Bojangles</h3>
+                <div class="dish">
+                    <p>Chicken Supremes combo</p>
+                    <p>Description: Chicken Supremes combo.</p>
+                    <p>Price: $10.99</p>
+                    <button class="add" data-name="Chicken Supremes combo" data-price="10.99">Add to Meal Plan</button>
+                </div>
+                <div class="dish">
+                    <p>Boberry Biscuit</p>
+                    <p>Description: Boberry Biscuit.</p>
+                    <p>Price: $3.99</p>
+                    <button class="add" data-name="Boberry Biscuit" data-price="3.99">Add to Meal Plan</button>
+                </div>
+                <div class="dish">
+                    <p>Cajun Filet biscuit</p>
+                    <p>Description: Cajun Filet biscuit.</p>
+                    <p>Price: $4.99</p>
+                    <button class="add" data-name="Cajun Filet biscuit" data-price="4.99">Add to Meal Plan</button>
+                </div>
+            </div>
+            <div class="restaurant">
+                <h3>Panda Express</h3>
+                <div class="dish">
+                    <p>Orange Chicken</p>
+                    <p>Description: Orange Chicken.</p>
+                    <p>Price: $11.99</p>
+                    <button class="add" data-name="Orange Chicken" data-price="11.99">Add to Meal Plan</button>
+                </div>
+                <div class="dish">
+                    <p>Teryaki Chicken</p>
+                    <p>Description: Teryaki Chicken.</p>
+                    <p>Price: $10.99</p>
+                    <button class="add" data-name="Teryaki Chicken" data-price="10.99">Add to Meal Plan</button>
+                </div>
+                <div class="dish">
+                    <p>Lo Mein</p>
+                    <p>Description: Lo Mein.</p>
+                    <p>Price: $9.99</p>
+                    <button class="add" data-name="Lo Mein" data-price="9.99">Add to Meal Plan</button>
+                </div>
+            </div>
+        </div>
+        <div class="meal-plan">
+            <h2>Meal Plan</h2>
+            <div id="meal-plan-list">
+            </div>
+            <p>Total Cost: $<span id="total-cost">0.00</span></p>
+        </div>
+    </div>
+</body>
+
+</html>

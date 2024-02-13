@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.recommendations {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.meal-plan {
+    flex: 1;
+}
