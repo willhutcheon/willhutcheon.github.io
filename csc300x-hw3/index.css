@@ -2,3 +2,17 @@ img {
     width: 300px;
     height: auto;
 }
+
+.big {
+    margin: 0 10px;
+    /* border: 1px solid black; */
+    width: 600px;
+    height: auto;
+}
+
+.small {
+    margin: 0 10px;
+    /* border: 1px solid black; */
+    width: 300px;
+    height: auto;
+}
