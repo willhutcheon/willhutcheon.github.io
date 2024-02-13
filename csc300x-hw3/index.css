@@ -16,3 +16,21 @@ img {
     width: 300px;
     height: auto;
 }
+
+.flex-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 700px;
+    background-color: gray;
+}
+
+.flex-item {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 30px;
+    background-color: gray;
+}
