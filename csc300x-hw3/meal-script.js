@@ -1,3 +1,7 @@
+/* Will Hutcheon
+Webpage that displays restaurant reccomendations and reccomended dishes for the restaurants as well as a page for creating a meal plan
+based on the reccomendations. This file contains the javascript code for the meal plan webpage. This code is adding buttons with functionality to allow a user
+to create a meal plan and see how much their plan costs. */
 document.addEventListener('DOMContentLoaded', function () {
     const addButtons = document.querySelectorAll('.add');
     const mealPlanList = document.getElementById('meal-plan-list');
