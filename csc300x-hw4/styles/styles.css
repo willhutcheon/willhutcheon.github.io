@@ -19,14 +19,14 @@
 }
 
 .flex-container img.selected {
-    border-color: red; /* Change border color to red when selected */
+    border-color: red;
 }
 
 .flex-container h1 {
-    margin: 0; /* Remove default margins */
+    margin: 0;
 }
 
-.play-again-button {
+.play-again-button, .reset-score-button {
     padding: 10px 20px;
     background-color: white;
     color: black;
@@ -36,17 +36,14 @@
 }
 
 .results-container {
-    display: flex; /* Display children inline */
-    align-items: center; /* Center children vertically */
-
-    /* justify-content: flex-start; */
-
+    display: flex;
     justify-content: space-between;
-
+    align-items: center;
     border: 1px solid black;
     border-radius: 5px;
+    padding: 10px;
 }
 
 .results-container h1 {
-    margin-right: 10px; /* Add space between "RESULTS:" and the result */
+    margin-right: 10px;
 }
