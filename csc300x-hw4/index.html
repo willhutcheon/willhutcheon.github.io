@@ -10,16 +10,24 @@
 
 <body>
     <div class="flex-container">
-        <img src="images/rock.PNG" alt="rock">
-        <img src="images/paper.PNG" alt="paper">
-        <img src="images/scissors.PNG" alt="scissors">
+        <div>
+            <img src="images/rock.PNG" alt="rock" onclick="play('rock')">
+            <img src="images/paper.PNG" alt="paper" onclick="play('paper')">
+            <img src="images/scissors.PNG" alt="scissors" onclick="play('scissors')">
+        </div>
+        <div>
+            <h1 id="user-choice">YOUR THROW</h1>
+        </div>
     </div>
+
     <div class="flex-container">
-        <h1>COMPUTER THROW</h1>
+        <h1 id="computer-choice">COMPUTER THROW</h1>
+        <img id="computer-choice-img" src="images/question-mark.PNG" alt="Computer's Choice">
     </div>
+
     <div class="flex-container">
-        <h1>RESULTS:</h1>
-        <button class="play-again-button">Play Again</button>
+        <h1 id="result">RESULTS:</h1>
+        <button class="play-again-button" onclick="reset()">Play Again</button>
     </div>
 </body>
 
