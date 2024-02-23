@@ -1,28 +1,36 @@
-function play(userChoice) {
-    const choices = ['rock', 'paper', 'scissors'];
-    const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+function play(userChoice, element) {
+    // Remove border from all images
+    const images = document.querySelectorAll('.flex-container img');
+    images.forEach(img => img.classList.remove('selected'));
+
+    // Add border to the clicked image
+    element.classList.add('selected');
 
     document.getElementById('user-choice').textContent = `YOUR THROW: ${userChoice.toUpperCase()}`;
-    document.getElementById('computer-choice-img').src = `images/${computerChoice}.PNG`;
+    
+    // Start the timeout for the computer's throw
+    setTimeout(() => {
+        const choices = ['rock', 'paper', 'scissors'];
+        let index = 0;
 
-    const result = determineWinner(userChoice, computerChoice);
-    document.getElementById('result').textContent = result;
-}
+        // Shuffle images every half second
+        const shuffleInterval = setInterval(() => {
+            const computerChoice = choices[index];
+            document.getElementById('computer-choice-img').src = `images/${computerChoice}.PNG`;
+            index++;
+            if (index >= choices.length) {
+                index = 0;
+            }
+        }, 500);
 
-function determineWinner(userChoice, computerChoice) {
-    if (userChoice === computerChoice) {
-        return "It's a tie!";
-    } else if ((userChoice === 'rock' && computerChoice === 'scissors') ||
-        (userChoice === 'paper' && computerChoice === 'rock') ||
-        (userChoice === 'scissors' && computerChoice === 'paper')) {
-        return 'You win!';
-    } else {
-        return 'Computer wins!';
-    }
-}
+        // Stop shuffling after 3 seconds
+        setTimeout(() => {
+            clearInterval(shuffleInterval);
+            const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+            document.getElementById('computer-choice-img').src = `images/${computerChoice}.PNG`;
+            const result = determineWinner(userChoice, computerChoice);
+            document.getElementById('result').textContent = result;
+        }, 3000);
 
-function reset() {
-    document.getElementById('user-choice').textContent = 'YOUR THROW';
-    document.getElementById('computer-choice-img').src = 'images/question-mark.PNG'; // Reset the computer's choice image
-    document.getElementById('result').textContent = 'RESULTS:';
+    }, 0);
 }
