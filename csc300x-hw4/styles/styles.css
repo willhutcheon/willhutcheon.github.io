@@ -19,7 +19,11 @@
 }
 
 .flex-container img.selected {
-    border-color: red;
+    border-color: red; /* Change border color to red when selected */
+}
+
+.flex-container h1 {
+    margin: 0; /* Remove default margins */
 }
 
 .play-again-button {
@@ -29,4 +33,13 @@
     border: 2px solid black;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.results-container {
+    display: flex; /* Display children inline */
+    align-items: center; /* Center children vertically */
+}
+
+.results-container h1 {
+    margin-right: 10px; /* Add space between "RESULTS:" and the result */
 }
