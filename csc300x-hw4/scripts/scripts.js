@@ -1,3 +1,6 @@
+/* Will Hutcheon
+Webpage that allows a user to play rock paper scissors against the computer. This file contains the javascript code for the index webpage. This code adds
+game simulation functionality as well as keeping track of the results. */
 let wins = 0;
 let losses = 0;
 let ties = 0;
