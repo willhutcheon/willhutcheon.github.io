@@ -46,17 +46,19 @@ function determineWinner(userChoice, computerChoice) {
 }
 
 function updateOutcome(result) {
+    const outcomeElement = document.getElementById('result');
     if (result === "IT'S A TIE!") {
-        document.getElementById('result').textContent = "IT'S A TIE!";
+        outcomeElement.textContent = `RESULTS: ${result}`;
     } else if (result === 'YOU WIN!') {
-        document.getElementById('result').textContent = 'YOU WIN THE GAME!';
+        outcomeElement.textContent = `RESULTS: ${result}`;
     } else {
-        document.getElementById('result').textContent = 'COMPUTER WINS THE GAME!';
+        outcomeElement.textContent = `RESULTS: ${result}`;
     }
     document.getElementById('wins').textContent = wins;
     document.getElementById('losses').textContent = losses;
     document.getElementById('ties').textContent = ties;
 }
+
 
 
 function reset() {

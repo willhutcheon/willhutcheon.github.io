@@ -19,24 +19,23 @@
             <h1 id="user-choice">YOUR THROW</h1>
         </div>
     </div>
-
     <div class="flex-container">
         <h1 id="computer-choice">COMPUTER THROW</h1>
         <img id="computer-choice-img" src="images/question-mark.PNG" alt="Computer's Choice">
     </div>
-
     <div class="results-container">
         <div>
-            <h1>RESULTS:</h1>
-            <h1 id="result"></h1>
+            <h1 id="result">RESULTS:</h1>
         </div>
+        <button class="play-again-button" onclick="reset()">Play Again</button>
+    </div>
+    <div class="results-container">
         <div>
             <h2>Score:</h2>
             <p>Wins: <span id="wins">0</span></p>
             <p>Losses: <span id="losses">0</span></p>
             <p>Ties: <span id="ties">0</span></p>
         </div>
-        <button class="play-again-button" onclick="reset()">Play Again</button>
         <button class="reset-score-button" onclick="resetScore()">Reset Score</button>
     </div>
 </body>
