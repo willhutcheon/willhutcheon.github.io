@@ -86,6 +86,7 @@ function getRepos() {
 
                 const repoName = document.createElement('div');
                 repoName.classList.add('repo-name');
+                
 
                 // Create and append the image element
                 const gitIcon = document.createElement('img');
@@ -95,10 +96,18 @@ function getRepos() {
                 gitIcon.style.height = '24px';
                 repoName.appendChild(gitIcon);
 
+                const repoLink = document.createElement('a');
+                repoLink.href = repo.html_url;
+                repoLink.textContent = repo.name;
+                repoLink.target = "_blank"; // Open link in a new tab
+
+                // Append the hyperlink element to the repo name container
+                repoName.appendChild(repoLink);
+
                 // Set the text content of the repo name
-                const repoNameText = document.createElement('span');
-                repoNameText.textContent = repo.name;
-                repoName.appendChild(repoNameText);
+                // const repoNameText = document.createElement('span');
+                // repoNameText.textContent = repo.name;
+                // repoName.appendChild(repoNameText);
 
                 const repoDescription = document.createElement('div');
                 repoDescription.classList.add('repo-description');
