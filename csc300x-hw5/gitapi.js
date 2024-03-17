@@ -37,7 +37,6 @@ function getRepos() {
 
                         const createDate = new Date(repo.created_at);
                         const updateDate = new Date(repo.updated_at);
-
                         const repoInfoDetails = document.createElement('div');
                         repoInfoDetails.classList.add('repo-info-details');
                         repoInfoDetails.innerHTML = `
