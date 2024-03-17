@@ -1,5 +1,3 @@
-// NEEDS SEARCH FIELD
-
 /* const apiUrl = "https://api.github.com/users/willhutcheon/repos";
 
 function getRepos() {
@@ -154,9 +152,16 @@ function getRepos() {
 getRepos();
  */
 
-const apiUrl = "https://api.github.com/users/willhutcheon/repos";
+function searchRepos() {
+    const username = document.getElementById("username-input").value;
+    if (username.trim() !== "") {
+        getRepos(username);
+    }
+}
 
-function getRepos() {
+function getRepos(username) {
+    const apiUrl = `https://api.github.com/users/${username}/repos`;
+
     fetch(apiUrl)
         .then((response) => {
             if (!response.ok) {
@@ -166,6 +171,7 @@ function getRepos() {
         })
         .then((repoData) => {
             const repoListContainer = document.getElementById("repo-list");
+            repoListContainer.innerHTML = ''; // Clear existing repo gallery
 
             repoData.forEach(repo => {
                 // Create elements for repository details
@@ -191,11 +197,6 @@ function getRepos() {
                 // Append the hyperlink element to the repo name container
                 repoName.appendChild(repoLink);
 
-                // Set the text content of the repo name
-                // const repoNameText = document.createElement('span');
-                // repoNameText.textContent = repo.name;
-                // repoName.appendChild(repoNameText);
-
                 const repoDescription = document.createElement('div');
                 repoDescription.classList.add('repo-description');
                 repoDescription.textContent = repo.description;
@@ -218,7 +219,6 @@ function getRepos() {
                             Last Updated: ${updateDate.toLocaleDateString()} <br>
                             Number of Commits: ${numberOfCommits} <br>
                             Language: ${repo.language}, Stars: ${repo.stargazers_count}, Forks: ${repo.forks_count}, Watchers: ${repo.watchers_count} <br>
-                            Description: ${repo.description}
                         `;
 
                         repoContainer.appendChild(repoInfoDetails);
@@ -237,5 +237,3 @@ function getRepos() {
             console.error("Error:", error);
         });
 }
-
-getRepos();
