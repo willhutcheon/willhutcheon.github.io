@@ -53,9 +53,15 @@ function getRepos(username) {
                 starCount.textContent = repo.stargazers_count;
                 repoContainer.appendChild(starCount);
 
-                const branchIcon = document.createElement('i');
-                branchIcon.classList.add('fa-solid', 'fa-code-branch');
-                repoContainer.appendChild(branchIcon);
+                // Create and append the fork icon
+                const forkIcon = document.createElement('i');
+                forkIcon.classList.add('fa-solid', 'fa-code-branch');
+                repoContainer.appendChild(forkIcon);
+
+                // Display the number of forks after the fork icon
+                const forksCount = document.createElement('span');
+                forksCount.textContent = repo.forks_count;
+                repoContainer.appendChild(forksCount);
 
                 const eyeIcon = document.createElement('i');
                 eyeIcon.classList.add('fa-solid', 'fa-eye');
@@ -90,7 +96,10 @@ function getRepos(username) {
                             Created: ${createDate.toLocaleDateString()} <br>
                             Last Updated: ${updateDate.toLocaleDateString()} <br>
                             Number of Commits: ${numberOfCommits} <br>
-                            Language: ${repo.language}, Forks: ${repo.forks_count} <br>
+                            Language: ${repo.language} <br>
+                            Stars: ${repo.stargazers_count} <br>
+                            Forks: ${repo.forks_count} <br>
+                            Watchers: ${repo.watchers_count} <br>
                         `;
 
                         repoDetails.appendChild(repoInfoDetails);
