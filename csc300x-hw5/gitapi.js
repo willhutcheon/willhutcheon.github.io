@@ -27,13 +27,10 @@ function getRepos(username) {
                 const repoName = document.createElement('div');
                 repoName.classList.add('repo-name');
 
-                // Create and append the image element
-                const gitIcon = document.createElement('img');
-                gitIcon.src = 'giticon.png';
-                gitIcon.alt = 'Git Icon';
-                gitIcon.style.width = '24px';
-                gitIcon.style.height = '24px';
-                repoName.appendChild(gitIcon);
+                // Create and append the GitHub icon element
+                const gitHubIcon = document.createElement('i');
+                gitHubIcon.classList.add('fa-brands', 'fa-github');
+                repoName.appendChild(gitHubIcon);
 
                 const repoLink = document.createElement('a');
                 repoLink.href = repo.html_url;
