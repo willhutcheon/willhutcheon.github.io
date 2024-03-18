@@ -48,6 +48,11 @@ function getRepos(username) {
                 starIcon.classList.add('fa-solid', 'fa-star');
                 repoContainer.appendChild(starIcon);
 
+                // Display the number of stars after the star icon
+                const starCount = document.createElement('span');
+                starCount.textContent = repo.stargazers_count;
+                repoContainer.appendChild(starCount);
+
                 const branchIcon = document.createElement('i');
                 branchIcon.classList.add('fa-solid', 'fa-code-branch');
                 repoContainer.appendChild(branchIcon);
@@ -55,6 +60,11 @@ function getRepos(username) {
                 const eyeIcon = document.createElement('i');
                 eyeIcon.classList.add('fa-solid', 'fa-eye');
                 repoContainer.appendChild(eyeIcon);
+
+                // Display the number of watchers after the eye icon
+                const watchersCount = document.createElement('span');
+                watchersCount.textContent = repo.watchers_count;
+                repoContainer.appendChild(watchersCount);
 
                 const repoDescription = document.createElement('div');
                 repoDescription.classList.add('repo-description');
@@ -80,7 +90,7 @@ function getRepos(username) {
                             Created: ${createDate.toLocaleDateString()} <br>
                             Last Updated: ${updateDate.toLocaleDateString()} <br>
                             Number of Commits: ${numberOfCommits} <br>
-                            Language: ${repo.language}, Stars: ${repo.stargazers_count}, Forks: ${repo.forks_count}, Watchers: ${repo.watchers_count} <br>
+                            Language: ${repo.language}, Forks: ${repo.forks_count} <br>
                         `;
 
                         repoDetails.appendChild(repoInfoDetails);
