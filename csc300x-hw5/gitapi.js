@@ -45,31 +45,34 @@ function getRepos(username) {
 
                 // Create and append the star icon
                 const starIcon = document.createElement('i');
-                starIcon.classList.add('fa-solid', 'fa-star');
+                starIcon.classList.add('fa-solid', 'fa-star', 'icon-margin', 'icon-color');
                 repoContainer.appendChild(starIcon);
 
                 // Display the number of stars after the star icon
                 const starCount = document.createElement('span');
                 starCount.textContent = repo.stargazers_count;
+                starCount.classList.add('icon-color');
                 repoContainer.appendChild(starCount);
 
                 // Create and append the fork icon
                 const forkIcon = document.createElement('i');
-                forkIcon.classList.add('fa-solid', 'fa-code-branch');
+                forkIcon.classList.add('fa-solid', 'fa-code-branch', 'icon-color');
                 repoContainer.appendChild(forkIcon);
 
                 // Display the number of forks after the fork icon
                 const forksCount = document.createElement('span');
                 forksCount.textContent = repo.forks_count;
+                forksCount.classList.add('icon-color');
                 repoContainer.appendChild(forksCount);
 
                 const eyeIcon = document.createElement('i');
-                eyeIcon.classList.add('fa-solid', 'fa-eye');
+                eyeIcon.classList.add('fa-solid', 'fa-eye', 'icon-color');
                 repoContainer.appendChild(eyeIcon);
 
                 // Display the number of watchers after the eye icon
                 const watchersCount = document.createElement('span');
                 watchersCount.textContent = repo.watchers_count;
+                watchersCount.classList.add('icon-color');
                 repoContainer.appendChild(watchersCount);
 
                 const repoDescription = document.createElement('div');

@@ -2,6 +2,14 @@ body {
     background-color: black;
 }
 
+.icon-margin {
+    margin-left: 20px;
+}
+
+.icon-color {
+    color: blue;
+}
+
 .repo-list-container {
     display: flex;
     flex-wrap: wrap;
