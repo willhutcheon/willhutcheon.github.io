@@ -40,9 +40,28 @@ function getRepos(username) {
                 // Append the hyperlink element to the repo name container
                 repoName.appendChild(repoLink);
 
+                // Append repo name to repo container
+                repoContainer.appendChild(repoName);
+
+                // Create and append the star icon
+                const starIcon = document.createElement('i');
+                starIcon.classList.add('fa-solid', 'fa-star');
+                repoContainer.appendChild(starIcon);
+
+                const branchIcon = document.createElement('i');
+                branchIcon.classList.add('fa-solid', 'fa-code-branch');
+                repoContainer.appendChild(branchIcon);
+
+                const eyeIcon = document.createElement('i');
+                eyeIcon.classList.add('fa-solid', 'fa-eye');
+                repoContainer.appendChild(eyeIcon);
+
                 const repoDescription = document.createElement('div');
                 repoDescription.classList.add('repo-description');
                 repoDescription.textContent = repo.description;
+
+                // Append description to repo container
+                repoContainer.appendChild(repoDescription);
 
                 const repoDetails = document.createElement('div');
                 repoDetails.classList.add('repo-details');
@@ -64,14 +83,10 @@ function getRepos(username) {
                             Language: ${repo.language}, Stars: ${repo.stargazers_count}, Forks: ${repo.forks_count}, Watchers: ${repo.watchers_count} <br>
                         `;
 
-                        repoContainer.appendChild(repoInfoDetails);
+                        repoDetails.appendChild(repoInfoDetails);
+                        repoContainer.appendChild(repoDetails);
                     })
                     .catch(error => console.error("Error fetching commits:", error));
-
-                // Append all elements to repo container
-                repoContainer.appendChild(repoName);
-                repoContainer.appendChild(repoDescription);
-                repoContainer.appendChild(repoDetails);
 
                 repoListContainer.appendChild(repoContainer);
             });
