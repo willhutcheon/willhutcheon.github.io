@@ -10,6 +10,7 @@ body {
 .repo-container {
     /* flex: 1 1 calc(33.33% - 20px); */
     /* flex: 1 1 calc((100% / 3) - 20px); */
+    flex: 0 1 300px;
     border: 1px solid #ccc;
     padding: 10px;
     margin: 10px;
