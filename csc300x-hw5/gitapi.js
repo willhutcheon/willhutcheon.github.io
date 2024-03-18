@@ -1,3 +1,4 @@
+
 function searchRepos() {
     const username = document.getElementById("username-input").value;
     if (username.trim() !== "") {
@@ -29,7 +30,7 @@ function getRepos(username) {
 
                 // Create and append the GitHub icon element
                 const gitHubIcon = document.createElement('i');
-                // MAKE THIS ICON
+                // MAKE THIS ICON BIGGER
                 gitHubIcon.classList.add('fa-brands', 'fa-github', 'fa-lg');
                 repoName.appendChild(gitHubIcon);
 
