@@ -1,7 +1,16 @@
+// Add an event listener to the window's "load" event
+window.addEventListener('load', function() {
+    // Call the searchRepos function to fetch repositories for 'willhutcheon'
+    searchRepos();
+});
+
 function searchRepos() {
     const username = document.getElementById("username-input").value;
     if (username.trim() !== "") {
         getRepos(username);
+    } else {
+        // If no username is provided, default to 'willhutcheon'
+        getRepos('willhutcheon');
     }
 }
 
