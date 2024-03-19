@@ -96,8 +96,40 @@ function getRepos(username) {
                 repoDetails.classList.add('repo-details');
 
                 // Fetch additional repository details including commit information and languages
+                const commitUrl = `${repo.url}/commits`;
+
+                // Recursive function to fetch all commits
+                function fetchCommits(url, allCommits = []) {
+                    return fetch(url)
+                        .then(response => {
+                            const linkHeader = response.headers.get('Link');
+                            const nextUrl = getNextPageUrl(linkHeader);
+                            return Promise.all([response.json(), nextUrl]);
+                        })
+                        .then(([commits, nextUrl]) => {
+                            allCommits.push(...commits);
+                            if (nextUrl) {
+                                return fetchCommits(nextUrl, allCommits);
+                            } else {
+                                return allCommits;
+                            }
+                        });
+                }
+
+                function getNextPageUrl(linkHeader) {
+                    if (!linkHeader) return null;
+                    const links = linkHeader.split(',');
+                    for (const link of links) {
+                        const [url, rel] = link.split(';');
+                        if (rel.trim() === 'rel="next"') {
+                            return url.trim().slice(1, -1); // Remove < and >
+                        }
+                    }
+                    return null;
+                }
+
                 Promise.all([
-                    fetch(repo.url + '/commits').then(response => response.json()),
+                    fetchCommits(commitUrl),
                     fetch(repo.languages_url).then(response => response.json())
                 ])
                     .then(([commits, languages]) => {
