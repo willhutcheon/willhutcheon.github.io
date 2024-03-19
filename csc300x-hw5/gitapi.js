@@ -1,16 +1,7 @@
-// Add an event listener to the window's "load" event
-window.addEventListener('load', function() {
-    // Call the searchRepos function to fetch repositories for 'willhutcheon'
-    searchRepos();
-});
-
 function searchRepos() {
     const username = document.getElementById("username-input").value;
     if (username.trim() !== "") {
         getRepos(username);
-    } else {
-        // If no username is provided, default to 'willhutcheon'
-        getRepos('willhutcheon');
     }
 }
 
@@ -95,34 +86,32 @@ function getRepos(username) {
                 const repoDetails = document.createElement('div');
                 repoDetails.classList.add('repo-details');
 
-                // Fetch additional repository details including commit information and languages
-                Promise.all([
-                    fetch(repo.url + '/commits').then(response => response.json()),
-                    fetch(repo.languages_url).then(response => response.json())
-                ])
-                .then(([commits, languages]) => {
-                    // Find the latest commit
-                    const latestCommit = commits[0]; // Assuming commits are returned in descending order
-                    const latestCommitDate = new Date(latestCommit.commit.author.date);
+                // Fetch additional repository details including commit information
+                fetch(repo.url + '/commits')
+                    .then(response => response.json())
+                    .then(commits => {
+                        // Find the latest commit
+                        const latestCommit = commits[0]; // Assuming commits are returned in descending order
+                        const latestCommitDate = new Date(latestCommit.commit.author.date);
 
-                    // Other repository details
-                    const createDate = new Date(repo.created_at);
-                    const repoInfoDetails = document.createElement('div');
-                    repoInfoDetails.classList.add('repo-info-details');
-                    repoInfoDetails.innerHTML = `
-                        Created: ${createDate.toLocaleDateString()} <br>
-                        Last Updated: ${latestCommitDate.toLocaleDateString()} <br>
-                        Number of Commits: ${commits.length} <br>
-                        Languages: ${Object.keys(languages).join(', ')} <br>
-                        Stars: ${repo.stargazers_count} <br>
-                        Forks: ${repo.forks_count} <br>
-                        Watchers: ${repo.watchers_count} <br>
-                    `;
+                        // Other repository details
+                        const createDate = new Date(repo.created_at);
+                        const repoInfoDetails = document.createElement('div');
+                        repoInfoDetails.classList.add('repo-info-details');
+                        repoInfoDetails.innerHTML = `
+                            Created: ${createDate.toLocaleDateString()} <br>
+                            Last Updated: ${latestCommitDate.toLocaleDateString()} <br>
+                            Number of Commits: ${commits.length} <br>
+                            Language: ${repo.language} <br>
+                            Stars: ${repo.stargazers_count} <br>
+                            Forks: ${repo.forks_count} <br>
+                            Watchers: ${repo.watchers_count} <br>
+                        `;
 
-                    repoDetails.appendChild(repoInfoDetails);
-                    repoContainer.appendChild(repoDetails);
-                })
-                .catch(error => console.error("Error fetching data:", error));
+                        repoDetails.appendChild(repoInfoDetails);
+                        repoContainer.appendChild(repoDetails);
+                    })
+                    .catch(error => console.error("Error fetching commits:", error));
 
                 repoListContainer.appendChild(repoContainer);
             });
