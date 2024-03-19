@@ -1,4 +1,5 @@
-window.addEventListener('load', function() {
+// Add an event listener to the window's "load" event
+window.addEventListener('load', function () {
     // Call the searchRepos function to fetch repositories for 'willhutcheon'
     searchRepos();
 });
@@ -130,4 +131,3 @@ function getRepos(username) {
             console.error("Error:", error);
         });
 }
-
